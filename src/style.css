@@ -1,0 +1,198 @@
+:root {
+  --bg: #15130f;
+  --panel: #211e18;
+  --border: #3a352c;
+  --text: #ece4d4;
+  --muted: #9c9383;
+  --accent: #d9b26a;
+  --weapon: #e39a3b;
+  --vitality: #6cb85a;
+  --spirit: #a97be0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+section {
+  margin-top: 20px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.reset {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 6px 0;
+}
+
+.chip[aria-pressed="true"].build-weapon {
+  background: var(--weapon);
+  color: #1a1206;
+  border-color: var(--weapon);
+}
+
+.chip[aria-pressed="true"].build-spirit {
+  background: var(--spirit);
+  color: #160d22;
+  border-color: var(--spirit);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.hero {
+  padding: 10px 6px;
+  font-size: 0.9rem;
+}
+
+.hero[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: #3a2f1c;
+}
+
+.enemy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 4px;
+}
+
+.enemy.threat {
+  border-color: var(--accent);
+}
+
+.enemy button {
+  border: none;
+  background: none;
+  padding: 6px 8px;
+}
+
+.star[aria-pressed="true"] {
+  color: var(--accent);
+}
+
+.remove {
+  color: var(--muted);
+}
+
+.missing {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.recs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.rec {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.rec.cat-weapon {
+  border-left-color: var(--weapon);
+}
+
+.rec.cat-vitality {
+  border-left-color: var(--vitality);
+}
+
+.rec.cat-spirit {
+  border-left-color: var(--spirit);
+}
+
+.rec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tier {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+
+.reasons {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+}
+
+.vs {
+  color: var(--muted);
+}
